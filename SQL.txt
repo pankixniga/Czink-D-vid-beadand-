@@ -1,0 +1,67 @@
+1 	SELECT `fovaros` FROM `orszagok` WHERE `orszag`='Madagaszkár';	
+2 	SELECT `orszag` FROM `orszagok` WHERE `fovaros` like 'OUAGADOUGOU';	
+3	SELECT `orszag` FROM `orszagok` WHERE `autojel` like 'TT';	
+4	SELECT `orszag` FROM `orszagok` WHERE `penzjel` like 'SGD';	
+5	SELECT `fovaros` FROM `orszagok` WHERE `telefon` like '61';	
+6	SELECT `terulet` FROM `orszagok` WHERE `orszag` like 'Monaco';	
+7	SELECT `nepesseg` FROM `orszagok` WHERE `orszag` like 'Málta';	
+8	SELECT `nepesseg` FROM `orszagok` WHERE `orszag` like 'Japán';	
+9	SELECT SUM(`nepesseg`) FROM `orszagok`;	
+10	SELECT SUM(`terulet`) FROM `orszagok`;	
+11	SELECT AVG(`nepesseg`) FROM `orszagok`;	
+12	SELECT AVG(`terulet`) FROM `orszagok`;	
+13	SELECT Count(`nepesseg`) FROM `orszagok`;	
+14	SELECT COUNT(`orszag`) FROM `orszagok` WHERE `terulet`> 1000000;	
+15	SELECT COUNT(`orszag`) FROM `orszagok` WHERE `terulet`< 100;	
+16	SELECT COUNT(`orszag`) FROM `orszagok` WHERE `nepesseg`< 20000;	
+17	SELECT COUNT(`orszag`) FROM `orszagok` WHERE `terulet`<100 or `nepesseg`<20000;	
+18	SELECT COUNT(`orszag`) FROM `orszagok` WHERE `terulet` BETWEEN 50000 and 150000;	
+19	SELECT COUNT(`orszag`) FROM `orszagok` WHERE `nepesseg` BETWEEN 8000000 and 1200000;	
+20	SELECT `fovaros` FROM `orszagok` WHERE `nepesseg`>20000000;	
+21	SELECT `orszag` FROM `orszagok` WHERE (`nepesseg`/`terulet`)>500;	
+22	SELECT  COUNT(`orszag`) FROM `orszagok` WHERE `allamforma` like 'köztársaság';	
+23	SELECT  `orszag` FROM `orszagok` WHERE `penznem` like 'kelet-karib dollár';	
+24	SELECT `orszag` FROM `orszagok` WHERE `orszag` like '%ORSZÁG%';	
+25	SELECT `orszag` FROM `orszagok` WHERE `penznem` like '%korona%';	
+26	SELECT SUM(terulet) FROM `orszagok`WHERE foldr_hely LIKE '%Európa%';
+27	SELECT SUM(nepesseg*1000) FROM `orszagok` WHERE foldr_hely LIKE '%Európa%';
+28	SELECT SUM(nepesseg*1000)/SUM(terulet) FROM `orszagok` WHERE foldr_hely LIKE '%Európa%';
+29	SELECT COUNT(orszag) FROM `orszagok` WHERE foldr_hely LIKE '%Afrika';
+30	SELECT SUM(nepesseg*1000) FROM `orszagok` WHERE foldr_hely LIKE '%Afrika';
+31	SELECT SUM(nepesseg*1000)/SUM(terulet) FROM `orszagok` WHERE foldr_hely LIKE '%Afrika%';
+32	SELECT orszag, foldr_hely FROM `orszagok` WHERE foldr_hely LIKE '%szigetország%';	
+33	SELECT `orszag` FROM `orszagok` WHERE `allamforma` like '%királyság%';	
+34	SELECT count(`orszag`) FROM `orszagok` WHERE `autojel` is null;	
+35	SELECT `valtopenz` FROM `orszagok` WHERE `valtopenz` not like 100;	
+36	SELECT COUNT(`orszag`) FROM `orszagok` WHERE `terulet`< 93025;	
+37	SELECT MAX(`terulet`),`orszag` FROM `orszagok`; 	
+38	SELECT MIN(`terulet`),`orszag` FROM `orszagok` ;	
+39	SELECT MAX(`nepesseg`),`orszag` FROM `orszagok`; 	
+40	SELECT MIN(`nepesseg`),`orszag` FROM `orszagok`; 	
+41	SELECT MAX(`nepesseg`)/`terulet`,`orszag` FROM `orszagok` ;	
+42	SELECT MIN(`nepesseg`)/`terulet`,`orszag` FROM `orszagok` ;	
+43	SELECT terulet, orszag FROM `orszagok` WHERE terulet=(SELECT MAX(terulet) FROM `orszagok`WHERE foldr_hely LIKE '%Afrika%');
+44	SELECT terulet, orszag, nepesseg*1000 FROM `orszagok` WHERE terulet=(SELECT MIN(terulet) FROM `orszagok`  WHERE foldr_hely LIKE '%Amerika%';	
+45	SELECT `orszag` FROM `orszagok` order by `nepesseg` DESC limit 3;	
+46	SELECT `nep_fovaros` FROM `orszagok` order by `nep_fovaros` DESC limit 6;	
+47	SELECT `orszag`, MAX(`gdp`)/`nepesseg` FROM `orszagok`; 	
+48	SELECT `orszag`, `gdp` FROM `orszagok` ORDER by `gdp` DESC limit 10;	
+49	SELECT `orszag`, MIN(`gdp`) FROM `orszagok`;	
+50	SELECT `orszag` FROM `orszagok` WHERE   `gdp`>0 ORDER BY `gdp` asc limit 1;	
+51	SELECT LAST(`orszag`) FROM `orszagok` ORDER by `terulet` ASC limit 40;	
+52	SELECT LAST(`terulet`/`nepesseg`) FROM `orszagok` ORDER by `terulet` ASC limit 40;	
+53	SELECT `orszag` FROM `orszagok` WHERE `terulet` BETWEEN 90000 and 100000;	
+54	NEM TUDTAM ----------------------------	
+55	SELECT SUM(`terulet`)/17100000 FROM `orszagok` 	
+56	SELECT COUNT(`nepesseg`) FROM `orszagok` WHERE `penznem` like 'EURO';	
+57	SELECT MAX(`gdp`) / MIn(`gdp`) FROM `orszagok` WHERE `gdp`>0;	
+58	SELECT SUM(`gdp`) / 37300 FROM `orszagok` WHERE `gdp`>0;	
+59	SELECT SUM(`gdp`) / 49090 FROM `orszagok` WHERE `gdp`>0;	
+60	NEM TUDTAM ------------------------	
+61	SELECT DISTINCT(`allamforma`) FROM `orszagok` WHERE foldr_hely like '%Európa%';
+62	SELECT COUNT(DISTINCT `allamforma`) FROM `orszagok; 	
+63	SELECT COUNT(DISTINCT `penznem`) FROM `orszagok` WHERE `penznem` not like 'EURO';	
+64	NEM TUDTAM	
+65	NEM TUDTAM -------------------	
+		
+		
